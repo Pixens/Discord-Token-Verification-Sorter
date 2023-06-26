@@ -1,6 +1,13 @@
 # Discord-Token-Verification-Sorter
 Sorts all tokens into categories (Email verified, phone verified, unclaimed, unverified, full verified)
 
+## How To Run?
+> 1) Clone / download this repository.
+> 2) Open the folder in command prompt or terminal.
+> 3) Run `pip install -r requirements.txt`.
+> 4) Put proxies in  `proxies.txt`, format: `username:password@host:port` or `ip:port` if you wish to use proxies.
+> 5) Put tokens in `tokens.txt`.
+> 6) Run `python main.py`.
 
 - IV | Invalid | The token is invalid, it does not work 
 - UC | Unclaimed | The token does not have an email or a phone linked 
