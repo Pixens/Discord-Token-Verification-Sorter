@@ -16,3 +16,6 @@ Sorts all tokens into categories (Email verified, phone verified, unclaimed, unv
 > - EV | Email Verified | The token has an email linked that is verified, it does not have a phone linked 
 > - PV | Phone Verified | The token has an email linked, but it is not verified, it has a phone linked and verified 
 > - FV | Full Verified | The token has both an email and a phone linked and verified 
+
+
+Leave a star for my efforts! Send $5 on my litecoin address if you are going to skid. My LTC address: LPBUWzJ1aaFccTfnExCpQetJdwMy1VLZ8f
