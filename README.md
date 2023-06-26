@@ -9,7 +9,7 @@ Sorts all tokens into categories (Email verified, phone verified, unclaimed, unv
 > 5) Put tokens in `tokens.txt`.
 > 6) Run `python main.py`.
 
-
+## Meaning of the acroynms used:
 > - IV | Invalid | The token is invalid, it does not work 
 > - UC | Unclaimed | The token does not have an email or a phone linked 
 > - UV | Unverified | The token has an email linked, but it is not verified, it does not have a phone linked 
