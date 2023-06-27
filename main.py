@@ -15,6 +15,7 @@ def get_type(token):
         response = session.get(f'https://discord.com/api/v9/users/@me', headers={'Authorization': token.split(':')[-1]})
         if response.status_code == 429:
             print('Rate limited, use proxies or try in a few days after cloudfare clears your IP.')
+            session.close()
             return token_type
         
         if response.status_code == 200:
