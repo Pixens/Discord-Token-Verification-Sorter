@@ -62,8 +62,7 @@ def get_type(token):
         
 with concurrent.futures.ThreadPoolExecutor(max_workers=config['max_threads']) as executor:
     tokens = open('tokens.txt', 'r').read().splitlines()
-    futures = []
     start = time.time()
     session = requests.Session()
     for token in tokens:
-        futures.append(executor.submit(get_type, token))
+        executor.submit(get_type, token)
