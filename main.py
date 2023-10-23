@@ -11,7 +11,10 @@ def get_type(token):
         session = requests.Session()
         if config['proxies']:
             proxylist = open('proxies.txt', 'r').read().splitlines()
-            session.proxies = 'http://' + random.choice(proxylist)
+            session.proxies = {
+                'http': f'http://{random.choice(proxylist)}',
+                'https': f'http://{random.choice(proxylist)}'
+            }
         response = session.get(f'https://discord.com/api/v9/users/@me', headers={'Authorization': token.split(':')[-1]})
         if response.status_code == 429:
             print('Rate limited, use proxies or try in a few days after cloudfare clears your IP.')
