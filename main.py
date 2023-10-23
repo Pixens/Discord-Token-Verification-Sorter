@@ -1,12 +1,12 @@
 import requests, concurrent.futures, yaml, random, time, datetime, os
 
 config = yaml.safe_load(open('config.yml'))
+directory = f'output/{now.strftime("%d-%m-%Y %H;%M;%S")}'
+os.makedirs(directory, exist_ok=True)
 
 def get_type(token):
     try:
         now = datetime.datetime.now(datetime.timezone.utc)
-        directory = f'output/{now.strftime("%d-%m-%Y %H;%M;%S")}'
-        os.makedirs(directory, exist_ok=True)
         token_type = ''
         session = requests.Session()
         if config['proxies']:
@@ -66,6 +66,5 @@ def get_type(token):
 with concurrent.futures.ThreadPoolExecutor(max_workers=config['max_threads']) as executor:
     tokens = open('tokens.txt', 'r').read().splitlines()
     start = time.time()
-    session = requests.Session()
     for token in tokens:
         executor.submit(get_type, token)
