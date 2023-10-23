@@ -1,12 +1,12 @@
 import requests, concurrent.futures, yaml, random, time, datetime, os
 
 config = yaml.safe_load(open('config.yml'))
+now = datetime.datetime.now(datetime.timezone.utc)
 directory = f'output/{now.strftime("%d-%m-%Y %H;%M;%S")}'
 os.makedirs(directory, exist_ok=True)
 
 def get_type(token):
     try:
-        now = datetime.datetime.now(datetime.timezone.utc)
         token_type = ''
         session = requests.Session()
         if config['proxies']:
